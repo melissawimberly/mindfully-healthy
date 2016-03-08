@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MindfullyHealthy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
+</head>
+<body>
+	<main class="backbone-content">
+	<nav>
+		<div class="nav-header row">
+			<div class="nav-header-left col-sm-3">
+				<h2 class="nav-label text-right">Mindfully</h2>
+				<h2 class="nav-label text-right">Healthy</h2>
+				<p>Family, Friends and AVOCADO...can't live without them</p>
+			</div>
+			<div class="img-div col-sm-1">
+				<img class="avo-img" id="avo-img" src="<%= image_url("avo_img.png") %>">
+			</div>
+			<!-- <div class="nav-header-right col-sm-8"> -->
+				<nav class="nav-header-right col-sm-8 filter-bar" role="navigation">
+	                <div class="collapse navbar-collapse filterbar-div" id="nav-tabs">
+                    	<ul class="navbar-nav">
+	                        <li id="philosophy-filter" class="filter dropdown">
+	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Philosophy</a>
+	                            <ul class="dropdown-menu">
+	                                <li data-title="About" id="About" />About</li>
+	                                <li data-title="Inspiration" id='Inspiration'/>Inspiration</li>
+	                                <li data-title="FAQs" id='FAQs' />FAQx</li>
+	                                <li data-title="Contact" id='Contact' />Contact</li>
+	                            </ul>
+	                        </li>
+
+	                        <li id="recipes-filter" class="filter dropdown">
+	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recipes</a>
+	                            <ul class="dropdown-menu">
+	                                <li data-title="Breakfast" id="breakfast" />Breakfast</li>
+	                                <li data-title="Lunch" id='lunch'/>Lunch</li>
+	                                <li data-title="Dinner" id='dinner' />Dinner</li>
+	                                <li data-title="Snacks" id='snacks' />Snacks</li>
+	                                <li data-title="Sweets" id='sweets' />Sweets</li>
+	                            </ul>
+	                        </li>
+
+	                        <li id="workouts-filter" class="filter dropdown">
+	                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Workouts</a>
+	                        	<ul class="dropdown-menu">
+	                                <li data-title="Core" id="core" />Core</li>
+	                                <li data-title="Arms" id='arms'/>Arms</li>
+	                                <li data-title="Legs" id='legs' />Legs</li>
+	                                <li data-title="Full Body" id='full_body' />Full Body</li>
+	                            </ul>
+	                        </li>
+
+	                        <li id="lifestyle-filter" class="filter dropdown">
+	                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Lifestyle</a>
+	                        	<ul class="dropdown-menu">
+	                                <li data-title="Style" id='style'/>Style</li>
+	                                <li data-title="Studios" id='studios' />Studios</li>
+	                                <li data-title="Breathing" id="breathing" />Breathing</li>
+	                            </ul>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </nav>        
+			</div>
+			<!-- <img src="images/avo_img.png" class="avo-img"> -->
+		</div>
+	</nav>
+	<section class="col-sm-10 recipe-post-section">
+		<div class="recipe-post">
+			<h3>Broccoli-Avocado Soup</h3>
+			<h5>Feb 6th, 2016</h5>
+			<img class="img-responsive" src="<%= image_url("broccoli-soup.jpg") %>">
+		</div>
+		<div class="recipe-post">
+			<h3>Coconut Hemp Granola</h3>
+			<h5>Feb 7th, 2016</h5>
+			<!-- <img class="img-responsive" src="../../assets/images/coconut-hemp-granola.jpg"> -->
+			<img class="img-responsive" src="<%= image_url("coconut-hemp-granola.jpg") %>">
+		</div>
+		<div class="recipe-post">
+			<h3>Just Nuts and Seeds</h3>
+			<h5>Feb 8th, 2016</h5>
+			<img class="img-responsive" src="<%= image_url("nuts-seeds-bread.jpg") %>">
+		</div>
+		<div class="recipe-post">
+			<h3>Sweet Potato Smoothie Bowl</h3>
+			<h5>Feb 9th, 2016</h5>
+			<img class="img-responsive" src="<%= image_url("sweet-potato-smoothie.jpg") %>">
+		</div>
+		<div class="recipe-post">
+			<h3>Banana Pecan Porridge</h3>
+			<h5>Feb 10th, 2016</h5>
+			<img class="img-responsive" src="<%= image_url("banana-pecan-porridge.jpg") %>">
+		</div>
+		<div class="recipe-post">
+			<h3>Minnie Apple Krisp</h3>
+			<h5>Feb 11th, 2016</h5>
+			<img class="img-responsive" src="<%= image_url("minni-apple-krisp.jpg") %>">
+		</div>
+	</section>
+	<div class="right-sidebar col-sm-2" style="min-height: 310px;">
+		<div class="ui sticky" style="left: 1116px; width: 283px !important; height: 310px !important;">
+			<h4 class="ui header">Sidebar</h4>
+			<div class="ui vertical following fluid accordion text menu">
+				<div class="item active">
+					<a class="active title"><i class="dropdown icon"></i> <b>Mains</b></a>
+					<div class="active content menu">
+						<a class="item active" href="#sidebar">Veggie</a>
+					</div>
+				</div>
+				<div class="item">
+					<a class="title active"><i class="dropdown icon"></i> <b>States</b></a>
+					<div class="content menu active">
+						<a class="item" href="#visible">Visible</a>
+						<a class="item" href="#dimmed">Dimmed</a>
+					</div>
+				</div>
+				<div class="item">
+					<a class="title active"><i class="dropdown icon"></i> <b>Variations</b></a>
+					<div class="content menu active">
+						<a class="item" href="#direction">Direction</a>
+						<a class="item" href="#width">Width</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/1.3.1/backbone-min.js"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+<script src="less.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.amd.min.js"></script>
+<script src="js/bootstrap.min.js"></script>	
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

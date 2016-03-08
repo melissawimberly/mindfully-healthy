@@ -1,0 +1,24 @@
+<h1>All the Recipes</h1>
+<section class="col-sm-10 recipe-post-section">
+	<% @recipes.each do |recipe| %>
+	
+	<div class="recipe-post">
+		<h3><%= recipe.name %>/h3>
+		<h5><%= recipe.date %></h5>
+		<img class="img-responsive" src="<%= image_tag @recipe.pic.url %>">
+
+		<!-- <img class="img-responsive" src="<%= image_url("broccoli-soup.jpg") %>"> -->
+	</div>
+</section>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Recipe</th>
+	</tr>
+		<tr>
+			<td><%= recipe.name %></td>
+			<td><%= recipe.recipe %></td>
+		</tr>
+	<% end %>	
+</table>
