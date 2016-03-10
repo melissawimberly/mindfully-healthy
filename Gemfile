@@ -27,6 +27,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", "~> 4.3"
 gem 'imagemagick-identify', '~> 0.0.1'
 
+gem 'bootstrap'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
