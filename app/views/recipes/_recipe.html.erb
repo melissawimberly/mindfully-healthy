@@ -1,0 +1,10 @@
+<% @recipes.each do |recipe| %>
+	<div class="recipe-post">
+		<h3><%= recipe.name %></h3>
+		<h5><%= recipe.date %></h5>
+		<img class="img-responsive" src="<%= recipe.pic.url %>">
+		<div>
+			<%= render "_recipe" %>
+		</div>
+	</div>
+<% end %>
