@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20160314235434) do
     t.string   "name",             limit: 255
     t.text     "recipe",           limit: 65535
     t.datetime "date"
+    t.text     "description",      limit: 65535
+    t.string   "urlTitle",         limit: 255
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "pic_file_name",    limit: 255
