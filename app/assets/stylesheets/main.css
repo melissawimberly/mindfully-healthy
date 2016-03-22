@@ -1,0 +1,13 @@
+.carousel-inner > .item > img{
+	height:auto;
+	position:relative;
+}
+.carousel .item{
+	overflow:hidden;
+	height:auto;
+}
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}

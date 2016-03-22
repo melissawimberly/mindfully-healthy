@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mindfully Healthy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
+
+    <!-- Custom CSS -->
+    <%= stylesheet_link_tag "business-casual.css" %>
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="brand">Mindfully Healthy</div>
+    <div class="address-bar">Where Healthy Living Meets Mindful Awareness</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Mindfully Healthy</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav text-center">
+                    <li>
+                        <a id="philosophy-link" href="#">Philosophy</a>
+                    </li>
+                    <li>
+                        <a id="recipes-link" href="#">Recipes</a>
+                    </li>
+                    <li>
+                        <a id="lifestyle-link" href="#">Lifestyle</a>
+                    </li>
+                    <li>
+                        <a id="meditation-link" href="#">Meditation</a>
+                    </li>
+                    <li>
+                        <a id="add-link" href="#">Your Turn</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <% @recipes.each do |recipe| %>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive" src="<%= recipe.pic.url %>">
+                            </div>
+                        </div>
+                        <% end %>   
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>Welcome to</small>
+                    </h2>
+                    <h1 class="brand-name">Mindfully Healthy</h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>By
+                            <strong>Missy Wimberly</strong>
+                        </small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <% @recipes.each do |recipe| %>
+						<div class="recipe-post">
+							<h3><%= recipe.name %></h3>
+							<h5><%= recipe.date %></h5>
+							<img class="img-responsive" src="<%= recipe.pic.url %>">
+                            <p><%= recipe.description %></p>
+                            <div class="read-more">
+                                <a class="button" href="http://deliciouslyella.com/<%recipe.urlTitle %>" itemprop="url">Read More</a>
+                            </div>
+						</div>
+					<% end %>	
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <%= render "new" %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Mindfully Healthy 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <%= javascript_include_tag "jquery.js" %>
+
+    <!-- Bootstrap Core JavaScript -->
+    <%= javascript_include_tag "bootstrap.min.js" %>
+
+    <!-- Script to Activate the Carousel -->
+    <%= javascript_include_tag "bootstrap.min.js" %>
+    
+    <script type="text/JavaScript" src="https://GoChat.us/chat.js"></script>
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</body>
+
+</html>
+
