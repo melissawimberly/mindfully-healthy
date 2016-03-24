@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Mindfully Healthy</title>
+    <title>The Mindful Eater</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@
 
     <!-- Favicon -->
     <%= favicon_link_tag "favicon.ico" %>
-    
+
 </head>
 
 <body>
@@ -58,6 +58,32 @@
       <h1>MINDFULLY HEALTHY</h1>
       <h4>Where Healthy Living Meets Mindful Awareness</h4>
     </div>
+    <!-- Recipe Snippets -->
+    <% @recipes.each do |recipe| %>
+    <div class="recipe-snip row">
+      <div class="recipe-post col-md-8 col-md-offset-2">
+        <h3 class="text-center"><%= recipe.name %></h3>
+        <img class="img-responsive" src="<%= recipe.pic.url %>">
+        <p><%= recipe.description %></p>
+        <hr>
+        <div class="read-more text-center">
+          <%= link_to "Read More", recipe, id: "description-trunctd", class: "description" %>
+        </div>
+        <div class="new-post-share text-center">
+          <span>Share this</span>
+          <a class="facebook fb-share sssocial" data-description="A classic energy ball recipe for you all! This is an easy, simplified version of my favourite snack &#8211; this time with just five ingredients. These little beauties are my go to when I need a pick me up and my fridge/freezer is always piled high them. You can add extra hemp powder if you&hellip;" data-link="http://deliciouslyella.com/classic-almond-and-cacao-energy-balls/" data-name="Classic Almond and Cacao Energy Balls" data-picture="http://deliciouslyella.com/wp-content/uploads/2016/03/a2.jpg" href="">&#xf610;</a>
+          <a class="sssocial twitter" href="https://twitter.com/intent/tweet?via=DeliciouslyElla&text=Classic+Almond+and+Cacao+Energy+Balls+%7C&url=http%3A%2F%2Fdeliciouslyella.com%2Fclassic-almond-and-cacao-energy-balls%2F" target="_blank">&#xf611;</a>
+          <a class="pinterest sssocial" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdeliciouslyella.com%2Fclassic-almond-and-cacao-energy-balls%2F&media=http%3A%2F%2Fdeliciouslyella.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fa2.jpg&description=Classic+Almond+and+Cacao+Energy+Balls" target="_blank">&#xf650;</a>
+        </div>
+      </div>
+    </div>
+  <% end %> 
+
+
+
+  <footer>
+    <h1>melissa wimberly © copyright 2016</h1>
+  </footer>
     
     <!-- jQuery -->
     <%= javascript_include_tag "jquery.js" %>
