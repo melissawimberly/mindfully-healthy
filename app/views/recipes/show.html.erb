@@ -1,12 +1,10 @@
-<h1>Congrats! You've just added this new recipe</h1>
+<h1 class="text-center"><%= @recipe.name %></h1>
 
-<div class="recipe-post">
-	<h3></h1><%= @recipe.name %></h3>
-	<h5><%= @recipe.date %></h5>
-	<h5><%= @recipe.recipe %></h5>
+<div class="recipe-post col-md-8 col-md-offset-2">
 	<img class="img-responsive" src="<%= @recipe.pic.url %>">
+	<h5><%= @recipe.recipe %></h5>
 </div>
-<div>
+<div class="back-btn text-right">
 	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
 </div>
 

@@ -25,10 +25,10 @@
 </head>
 
 <body>
-    <div class="overlay"><h1>The Mindful Eater</h1></div>
     <div id="top-recipes" class="carousel slide" data-ride="carousel" data-pause="hover">
+      <div class="overlay"><h1>The Mindful Eater</h1></div>
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators hidden-md hidden-lg">
         <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
         <li data-target="#top-recipes" data-slide-to="1"></li>
         <li data-target="#top-recipes" data-slide-to="2"></li>
@@ -43,18 +43,18 @@
           <%= image_tag("good-bread.JPG", :alt => "Life Changing Bread", class: "img-responsive") %>
         </div>
         <div class="item">
-          <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
+          <%= image_tag("quinoa-bowl.png", :alt => "Quinoa Bowl", class: "img-responsive") %>
         </div>
       </div>
      
-      <!-- Controls -->
-      <a class="left carousel-control" href="#top-recipes" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#top-recipes" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
+      
     </div> <!-- Carousel -->
+    <nav class="navbar bg-faded">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target"#nav-content"></button>
+      <div class="collapse navbar-toggleable-xs" id="nav-content">
+        <a class=href=""></a>
+      </div>
+    </nav>
     <div class="brand row">
       <h1>MINDFULLY HEALTHY</h1>
       <h4>Where Healthy Living Meets Mindful Awareness</h4>
@@ -66,15 +66,9 @@
         <h3 class="text-center"><%= recipe.name %></h3>
         <img class="img-responsive" src="<%= recipe.pic.url %>">
         <p><%= recipe.description %></p>
-        <hr>
+        <!-- <hr> -->
         <div class="read-more text-center">
-          <%= link_to "Read More", recipe, id: "description-trunctd", class: "description" %>
-        </div>
-        <div class="new-post-share text-center">
-          <span>Share this</span>
-          <a class="facebook fb-share sssocial" data-description="A classic energy ball recipe for you all! This is an easy, simplified version of my favourite snack &#8211; this time with just five ingredients. These little beauties are my go to when I need a pick me up and my fridge/freezer is always piled high them. You can add extra hemp powder if you&hellip;" data-link="http://deliciouslyella.com/classic-almond-and-cacao-energy-balls/" data-name="Classic Almond and Cacao Energy Balls" data-picture="http://deliciouslyella.com/wp-content/uploads/2016/03/a2.jpg" href="">&#xf610;</a>
-          <a class="sssocial twitter" href="https://twitter.com/intent/tweet?via=DeliciouslyElla&text=Classic+Almond+and+Cacao+Energy+Balls+%7C&url=http%3A%2F%2Fdeliciouslyella.com%2Fclassic-almond-and-cacao-energy-balls%2F" target="_blank">&#xf611;</a>
-          <a class="pinterest sssocial" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdeliciouslyella.com%2Fclassic-almond-and-cacao-energy-balls%2F&media=http%3A%2F%2Fdeliciouslyella.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fa2.jpg&description=Classic+Almond+and+Cacao+Energy+Balls" target="_blank">&#xf650;</a>
+          <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
         </div>
       </div>
     </div>
@@ -95,7 +89,6 @@
     <!-- Script to Activate the Carousel -->
     <%= javascript_include_tag "bootstrap.min.js" %>
     
-    <script type="text/JavaScript" src="https://GoChat.us/chat.js"></script>
     <script>
         $('.carousel').carousel({
             interval: 5000
@@ -103,7 +96,6 @@
     </script>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 
 </body>
 
