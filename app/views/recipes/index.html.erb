@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div id="top-recipes" class="carousel slide" data-ride="carousel" data-pause="hover">
+    <div id="top-recipes" class="carousel slide container" data-ride="carousel" data-pause="hover">
       <div class="overlay"><h1>The Mindful Eater</h1></div>
       <!-- Indicators -->
       <ol class="carousel-indicators hidden-md hidden-lg">
@@ -46,39 +46,51 @@
           <%= image_tag("quinoa-bowl.png", :alt => "Quinoa Bowl", class: "img-responsive") %>
         </div>
       </div>
+      <nav id='nav_bar'>
+        <ul class='nav_links'>
+          <li><a href="url">Nav Bar</a></li>
+          <li><a href="url">Sign In</a></li>
+          <li><a href="url">Blog</a></li>
+          <li><a href="url">About</a></li>
+        </ul>
+      </nav>
      
       
     </div> <!-- Carousel -->
-    <nav class="navbar bg-faded">
+<!--     <nav class="navbar bg-faded">
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target"#nav-content"></button>
       <div class="collapse navbar-toggleable-xs" id="nav-content">
         <a class=href=""></a>
       </div>
-    </nav>
-    <div class="brand row">
-      <h1>MINDFULLY HEALTHY</h1>
-      <h4>Where Healthy Living Meets Mindful Awareness</h4>
-    </div>
-    <!-- Recipe Snippets -->
-    <% @recipes.each do |recipe| %>
-    <div class="recipe-snip row">
-      <div class="recipe-post col-md-8 col-md-offset-2">
-        <h3 class="text-center"><%= recipe.name %></h3>
-        <img class="img-responsive" src="<%= recipe.pic.url %>">
-        <p><%= recipe.description %></p>
-        <!-- <hr> -->
-        <div class="read-more text-center">
-          <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
-        </div>
+    </nav> -->
+    <div id="body_div row">
+      
+      <div class="brand row">
+        <h1>MINDFULLY HEALTHY</h1>
+        <h4>Where Healthy Living Meets Mindful Awareness</h4>
       </div>
-    </div>
-  <% end %> 
-
-
-
+      <!-- Recipe Snippets -->
+      <% @recipes[0..2].each do |recipe| %>
+        <div class="recipe-snip row">
+          <div class="recipe-post col-md-8 col-md-offset-2">
+            <h3 class="text-center recipe-name"><%= recipe.name %></h3>
+            <img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>">
+            <p class="recipe-description"><%= recipe.description %></p>
+            <!-- <hr> -->
+            <div class="read-more text-center">
+              <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="add-new-btn">
+        <%= link_to "Hey Miss! What'd You Cook Today?", new_recipe_path, class: "btn add-recipe", role: "button"%>
+      </div>
+      </div>
   <footer>
     <h1>melissa wimberly © copyright 2016</h1>
   </footer>
+    </div>
     
     <!-- jQuery -->
     <%= javascript_include_tag "jquery.js" %>
@@ -86,8 +98,9 @@
     <!-- Bootstrap Core JavaScript -->
     <%= javascript_include_tag "bootstrap.min.js" %>
 
-    <!-- Script to Activate the Carousel -->
+    <!-- Script to Activate the Carousel and Navbar-->
     <%= javascript_include_tag "bootstrap.min.js" %>
+    <%= javascript_include_tag "navbar.js" %>
     
     <script>
         $('.carousel').carousel({

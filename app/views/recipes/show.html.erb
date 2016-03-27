@@ -2,7 +2,7 @@
 
 <div class="recipe-post col-md-8 col-md-offset-2">
 	<img class="img-responsive" src="<%= @recipe.pic.url %>">
-	<h5><%= @recipe.recipe %></h5>
+	<div><%= @recipe.recipe %></div>
 </div>
 <div class="back-btn text-right">
 	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
