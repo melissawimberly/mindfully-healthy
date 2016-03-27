@@ -83,9 +83,11 @@
           </div>
         </div>
       <% end %>
+      <% if current_user  %>
       <div class="add-new-btn">
         <%= link_to "Hey Miss! What'd You Cook Today?", new_recipe_path, class: "btn add-recipe", role: "button"%>
       </div>
+      <% end %>
       </div>
   <footer>
     <h1>melissa wimberly © copyright 2016</h1>
