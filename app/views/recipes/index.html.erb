@@ -10,7 +10,7 @@
       </ol>
      
       <!-- Wrapper for slides -->
-      <div class="carousel-inner">
+      <div class="carousel-inner" id="main-carousel">
         <div class="item active">
           <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
         </div>
@@ -29,15 +29,24 @@
           <li><a href="url">About</a></li>
         </ul>
       </nav>
-     
       
     </div> <!-- Carousel -->
-<!--     <nav class="navbar bg-faded">
+    
+    <!--     <nav class="navbar bg-faded">
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target"#nav-content"></button>
       <div class="collapse navbar-toggleable-xs" id="nav-content">
         <a class=href=""></a>
       </div>
     </nav> -->
+
+    
+<% if !current_user %>
+    <%= link_to "Sign In", new_user_registration_path %>
+    <%= link_to "Log In", new_user_session_path %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<% end %>
+    
     <div id="body_div row">
       <div class="brand row">
         <%= image_tag("avo-drawing.png", :alt => "Avocado Cartoon", class: "logo-img") %>
@@ -51,10 +60,10 @@
             <h3 class="text-center recipe-name"><%= recipe.name %></h3>
             <a id="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>"></a>
             <%  if @likes.include? recipe.id %>
-                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like"  %>
+                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
                 <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
             <% else %>
-                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: 'liker hide-like' %>
+                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: 'liker hide-like heart' %>
                 <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
             <% end %>
 
@@ -76,20 +85,13 @@
       </div>
       <% end %>
       </div>
-  <footer>
-    <h1>melissa wimberly © copyright 2016</h1>
-  </footer>
-    </div>
+      <% if current_user %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+      <% end %>
+      <footer>
+        <h1>melissa wimberly © copyright 2016</h1>
+      </footer>
     
-    <!-- jQuery -->
-    <%= javascript_include_tag "jquery.js" %>
-
-    <!-- Bootstrap Core JavaScript -->
-    <%= javascript_include_tag "bootstrap.min.js" %>
-
-    <!-- Script to Activate the Carousel and Navbar-->
-    <%= javascript_include_tag "bootstrap.min.js" %>
-    <%= javascript_include_tag "navbar.js" %>
     
     <script>
         $('.carousel').carousel({
@@ -103,5 +105,4 @@
         })
     </script>
     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
