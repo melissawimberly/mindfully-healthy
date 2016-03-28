@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root 'static_page#index'
   root 'recipes#index'
 
+  get "like" => "recipes#like"
+  get "unlike" => "recipes#unlike"
 end

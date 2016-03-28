@@ -1,30 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>The Mindful Eater</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Missy Wimberly is a Front-End Dev turned Foodie - Based in Brooklyn, NY.">
-    <meta name="keywords" content="front end developer,foodie,mindfulness,brooklyn">
 
-    <!-- Bootstrap Core CSS -->
-    <% stylesheet_link_tag "bootstrap.min.css" %>
-
-    <!-- Custom CSS -->
-    <% stylesheet_link_tag "main.css" %>
-
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Favicon -->
-    <%= favicon_link_tag "favicon.ico" %>
-
-</head>
-
-<body>
     <div id="top-recipes" class="carousel slide container" data-ride="carousel" data-pause="hover">
       <div class="overlay"><h1>The Mindful Eater</h1></div>
       <!-- Indicators -->
@@ -74,7 +49,19 @@
         <div class="recipe-snip row">
           <div class="recipe-post col-md-8 col-md-offset-2">
             <h3 class="text-center recipe-name"><%= recipe.name %></h3>
-            <img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>">
+            <a id="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>"></a>
+            <%  if @likes.include? recipe.id %>
+                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like"  %>
+                <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
+            <% else %>
+                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: 'liker hide-like' %>
+                <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
+            <% end %>
+
+            <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true  %>
+
+
+
             <p class="recipe-description"><%= recipe.description %></p>
             <!-- <hr> -->
             <div class="read-more text-center">
@@ -108,11 +95,13 @@
         $('.carousel').carousel({
             interval: 5000
         })
+        $('.liker').click(function(){
+          $(this).hide();
+          $(this).siblings().show()
+          // get the dude or gal under him or her 
+          // show em
+        })
     </script>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-</body>
-
-</html>
 

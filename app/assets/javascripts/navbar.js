@@ -4,7 +4,7 @@ $(document).ready(function() {
       //if you hard code, then use console
       //.log to determine when you want the 
       //nav bar to stick.  
-      console.log($(window).scrollTop())
+      // console.log($(window).scrollTop())
     if ($(window).scrollTop() > 650) {
       $('#nav_bar').addClass('navbar-fixed');
       $('#nav_bar').removeClass('top_screen')
@@ -13,4 +13,8 @@ $(document).ready(function() {
       $('#nav_bar').removeClass('navbar-fixed');
     }
   });
+  $('#recipe-img').on('click', function (e) {
+    e.preventDefault();
+    console.log('in here!');
+  })
 });
