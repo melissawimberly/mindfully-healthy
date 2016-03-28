@@ -18,7 +18,7 @@
           <%= image_tag("good-bread.JPG", :alt => "Life Changing Bread", class: "img-responsive") %>
         </div>
         <div class="item">
-          <%= image_tag("quinoa-bowl.png", :alt => "Quinoa Bowl", class: "img-responsive") %>
+          <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
         </div>
       </div>
       <nav id='nav_bar'>
@@ -60,7 +60,8 @@
             <h3 class="text-center recipe-name"><%= recipe.name %></h3>
             <a id="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>"></a>
             <%  if @likes.include? recipe.id %>
-                <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
+                <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
+                <%=link_to( image_tag("avo-drawing.png", :alt => "Avocado Cartoon", class: "like-img"), like_path(rec_id: recipe.id), remote: true ) %>
                 <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
             <% else %>
                 <%= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: 'liker hide-like heart' %>

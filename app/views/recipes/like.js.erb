@@ -1,3 +1,11 @@
-$('# heart').on('click', function(e){
-	alert('been liked');
-});
+// $('.like-img').on('click', function(e){
+// 	alert('been liked');
+// });
+function pulse() {
+    $('.like-img').animate({
+        width: 300, height: 300, 
+        opacity: 0.5
+    }); 
+};
+
+pulse();

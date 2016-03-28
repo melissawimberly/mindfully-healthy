@@ -1,5 +1,4 @@
 #main-carousel .carousel-inner > .item > img{
-	height:auto;
 	position:relative;
     max-width: 100%;
     height: 300px;
@@ -126,6 +125,11 @@ a.button{
 }
 .hide-like{
 	display: none;
+}
+.like-img{
+    position: absolute;
+    font-size: 100px;
+    font-weight: bold;
 }
 footer{
     position: absolute;
