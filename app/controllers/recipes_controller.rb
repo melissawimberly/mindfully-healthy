@@ -41,14 +41,11 @@ class RecipesController < ApplicationController
 		respond_to do |format|
 	    	format.html {}
 	      	format.js {
-		        @like = Like.where(
-		        	recipe_id: params[:rec_id],
-		      		user_id: current_user.id
-		        )
-		        puts "did this shit work or nah"
-		        puts @like
-		        puts "---------"
-		        #@like.destroy
+		        # @like = Like.where(
+		        # 	recipe_id: params[:rec_id],
+		      		# user_id: current_user.id
+		        # )
+		        Like.last
 	        }
 		end
 	end
