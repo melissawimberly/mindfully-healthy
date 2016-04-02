@@ -13,5 +13,9 @@ module ApplicationHelper
  #  def devise_mapping
  #    @devise_mapping ||= Devise.mappings[:user]
  #  end
+
+#  def nl2br(s)
+#   s.gsub(/\n/, '<br>')
+# end
   
 end
