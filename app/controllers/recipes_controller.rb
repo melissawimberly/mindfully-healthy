@@ -33,8 +33,10 @@ class RecipesController < ApplicationController
 		      		recipe_id: params[:rec_id],
 		      		user_id: current_user.id
 		        )
+		        render json: {liked: true}
 	        }
 		end
+
 	end
 
 	def unlike
