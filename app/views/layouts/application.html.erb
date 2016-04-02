@@ -30,6 +30,11 @@
 <div class="content">
   <%= yield %>
 </div>
+<div class="logout">
+  <% if current_user %>
+    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+  <% end %>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,32 @@
+<div id="top-recipes" class="carousel slide container" data-ride="carousel" data-pause="hover">
+  <div class="overlay">
+    <p></p>
+  </div>
+  <!-- Indicators -->
+  <ol class="carousel-indicators hidden-md hidden-lg">
+    <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
+    <li data-target="#top-recipes" data-slide-to="1"></li>
+    <li data-target="#top-recipes" data-slide-to="2"></li>
+  </ol>
+   
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" id="main-carousel">
+    <div class="item active">
+      <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
+    </div>
+    <div class="item">
+      <%= image_tag("good-bread.JPG", :alt => "Life Changing Bread", class: "img-responsive") %>
+    </div>
+    <div class="item">
+      <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
+    </div>
+  </div>
+  <nav id='nav_bar'>
+    <ul class='nav_links text-center'>
+      <li><a href="url">Philosophy</a></li>
+      <li><a href="url">Recipes</a></li>
+      <li><a href="url">Meditation</a></li>
+      <li><a href="url">About</a></li>
+    </ul>
+  </nav> 
+</div> <!-- Carousel -->

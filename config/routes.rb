@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :recipes
   
-  # root 'static_page#index'
+  # root 'recipes#welcome'
   root 'recipes#index'
 
   get "like" => "recipes#like"
