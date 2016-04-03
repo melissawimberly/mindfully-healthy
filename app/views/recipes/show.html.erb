@@ -6,6 +6,6 @@
 	<div><%=simple_format(@recipe.recipe).html_safe %></div>	
 	<div><%=simple_format(@recipe.description).html_safe %>	</div>
 </div>
-<div class="back-btn text-right">
+<div class="back-btn text-right clear">
 	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
 </div>

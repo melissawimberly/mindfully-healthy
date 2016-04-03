@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 		      		recipe_id: params[:rec_id],
 		      		user_id: current_user.id
 		        )
-		        render json: {liked: true}
+		        # render json: {liked: true}
 	        }
 		end
 
@@ -47,11 +47,14 @@ class RecipesController < ApplicationController
 		respond_to do |format|
 	    	format.html {}
 	      	format.js {
-		        # @like = Like.where(
-		        # 	recipe_id: params[:rec_id],
-		      		# user_id: current_user.id
-		        # )
-		        Like.last
+		        @like = Like.where(
+		        	recipe_id: params[:rec_id],
+		      		user_id: current_user.id
+		        )
+		        # binding.pry
+		      	# render json: {unliked: true}
+		 		@like.delete_all
+
 	        }
 		end
 	end

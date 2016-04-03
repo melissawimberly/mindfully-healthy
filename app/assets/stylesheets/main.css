@@ -134,7 +134,7 @@ a.button{
 	display: none;
 }
 .like-img{
-    position: absolute;
+    /*position: absolute;*/
     font-size: 100px;
     font-weight: bold;
 }
