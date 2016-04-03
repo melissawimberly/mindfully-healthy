@@ -49,7 +49,6 @@
     
     <div id="body_div row">
       <div class="brand row">
-        <%= image_tag("avo-drawing.png", :alt => "Avocado Cartoon", class: "logo-img") %>
         <h1>THE MINDFUL EATER</h1>
         <h4>Where Healthy Living Meets Mindful Awareness</h4>
       </div>
@@ -59,16 +58,18 @@
           <div class="recipe-post col-md-8 col-md-offset-2">
             <h3 class="text-center recipe-name"><%= recipe.name %></h3>
             <a id="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>"></a>
-            <%  if @likes.include? recipe.id %>
-                <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
-                <%=link_to( image_tag("avo-drawing.png", :alt => "Avocado Cartoon", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
-                <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
-            <% else %>
-                <%= link_to( image_tag("avo-drawing.png", :alt => "Avocado Cartoon", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
-                <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
-            <% end %>
+            <div class="like-div text-right">
+              <%  if @likes.include? recipe.id %>
+                  <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
+                  <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
+                  <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
+              <% else %>
+                  <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
+                  <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
+              <% end %>
 
-            <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true  %>
+              <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true  %>
+            </div>
 
 
 

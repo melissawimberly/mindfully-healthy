@@ -1,4 +1,4 @@
-/* Login */
+/* Sign Up */
 #signup-form {
     position: relative;
     min-height: 100%;
@@ -6,7 +6,7 @@
 .signup-content{
 	position: absolute;
 	left: 45%;
-	top: 30%;
+	// top: 30%;
 }
 #signup-form .carousel-inner .item {
     opacity: 0;
@@ -78,11 +78,4 @@
     position: fixed;
     width: 100%;
     height: 100%;
-}
-.login-content {
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  text-shadow: 2px 2px #000;
-  color: #FFF;
 }

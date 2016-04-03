@@ -82,7 +82,15 @@
   color: #FFF;
 }
 
-
+.welcome-signup, .welcome-login{
+    color: white;
+}
+.signup-content, .login-content{
+    top: 100%;
+    input{
+        width: 100%;
+    }
+}
 
 // #signup-form{
 // 	position: relative;

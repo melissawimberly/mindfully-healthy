@@ -1,8 +1,5 @@
 class RecipesController < ApplicationController
 	before_filter :authenticate_user!
-	def welcome
-
-	end
 	
 	def index
 		@recipes = Recipe.all
@@ -51,7 +48,6 @@ class RecipesController < ApplicationController
 		        	recipe_id: params[:rec_id],
 		      		user_id: current_user.id
 		        )
-		        # binding.pry
 		      	# render json: {unliked: true}
 		 		@like.delete_all
 
