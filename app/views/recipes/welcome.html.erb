@@ -1,32 +1,142 @@
-<div id="top-recipes" class="carousel slide container" data-ride="carousel" data-pause="hover">
-  <div class="overlay">
-    <p></p>
-  </div>
-  <!-- Indicators -->
-  <ol class="carousel-indicators hidden-md hidden-lg">
-    <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
-    <li data-target="#top-recipes" data-slide-to="1"></li>
-    <li data-target="#top-recipes" data-slide-to="2"></li>
-  </ol>
-   
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" id="main-carousel">
-    <div class="item active">
-      <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
-    </div>
-    <div class="item">
-      <%= image_tag("good-bread.JPG", :alt => "Life Changing Bread", class: "img-responsive") %>
-    </div>
-    <div class="item">
-      <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
+<div id="login-form">
+  
+  <div class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner signup-carousel" role="listbox">
+        <div class="item active">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
     </div>
   </div>
-  <nav id='nav_bar'>
-    <ul class='nav_links text-center'>
-      <li><a href="url">Philosophy</a></li>
-      <li><a href="url">Recipes</a></li>
-      <li><a href="url">Meditation</a></li>
-      <li><a href="url">About</a></li>
-    </ul>
-  </nav> 
-</div> <!-- Carousel -->
+
+
+  <!-- Content on top of the slider -->
+      <div class="welcome-signup text-center">
+        <h2>Welcome To The Mindful Eater</h2>
+      </div> 
+
+    <div class="signup-content">
+    <div class="container">
+
+  <div class="row text-center">
+      <h3>Login</h3>
+      <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Click to open Modal</a>
+  </div>
+  <hr>
+  <div class="row text-center">
+      <h3>Sign Up</h3>
+      <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#largeModal">Click to open Modal</a>
+  </div>
+  <hr>
+
+</div>
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@resource, url: session_path(@resource.name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@resource, url: registration_path(@resource.name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field(:email, autofocus: true, placeholder: 'What\'s Your Email Address?') %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field(:password, autocomplete: "off", placeholder:'What Do You Want Your Password To Be?')  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field(:password_confirmation, autocomplete: "off", placeholder:'Retype Your Password, just to be sure')  %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Small Modal</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Modal Body</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
