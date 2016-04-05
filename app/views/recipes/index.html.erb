@@ -32,14 +32,6 @@
       
     </div> <!-- Carousel -->
     
-    <!--     <nav class="navbar bg-faded">
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target"#nav-content"></button>
-      <div class="collapse navbar-toggleable-xs" id="nav-content">
-        <a class=href=""></a>
-      </div>
-    </nav> -->
-
-    
 <% if !current_user %>
     <%= link_to "Sign In", new_user_registration_path %>
     <%= link_to "Log In", new_user_session_path %>
@@ -47,7 +39,7 @@
     <p class="alert"><%= alert %></p>
 <% end %>
     
-    <div id="body_div row">
+    <div id="body_div" class="row">
       <div class="brand row">
         <h1>THE MINDFUL EATER</h1>
         <h4>Where Healthy Living Meets Mindful Awareness</h4>
@@ -57,7 +49,8 @@
         <div class="recipe-snip row">
           <div class="recipe-post col-md-8 col-md-offset-2">
             <h3 class="text-center recipe-name"><%= recipe.name %></h3>
-            <a id="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%= recipe.pic.url %>"></a>
+            <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
+            <!-- <a class="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%#= recipe.pic.url %>"></a> -->
             <div class="like-div text-right">
               <%  if @likes.include? recipe.id %>
                   <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
@@ -82,7 +75,7 @@
         </div>
       <% end %>
       <% if current_user  %>
-      <div class="add-new-btn">
+      <div class="add-new-btn text-center">
         <%= link_to "Hey Miss! What'd You Cook Today?", new_recipe_path, class: "btn add-recipe", role: "button"%>
       </div>
       <% end %>
