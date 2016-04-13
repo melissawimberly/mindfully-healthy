@@ -55,6 +55,10 @@ class RecipesController < ApplicationController
 		end
 	end
 
+	def about
+		redirect_to :about
+	end
+
 	private
 		def recipe_params
 			params.require(:recipe).permit(:name, :recipe, :date, :pic, :user_id, :rec_id)
