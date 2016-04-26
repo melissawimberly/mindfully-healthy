@@ -1,0 +1,19 @@
+.content{
+	#body_div{
+		top: 0;
+		position: relative;
+	    height: auto;
+	    text-align: center;
+	}	
+}
+
+
+@media (min-width: 320px) and (max-width: 720px) {
+  	#main{
+  		#top-recipes{
+  			#main-carousel {
+			    max-width: 100%;
+			}
+		}	
+	}
+}	

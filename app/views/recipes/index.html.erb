@@ -1,26 +1,7 @@
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mindfully Healthy</title>
-
-    <!-- Bootstrap Core CSS -->
-    <%= stylesheet_link_tag "bootstrap.min.css" %>
-
-    <!-- Custom CSS -->
-    <%= stylesheet_link_tag "main.css" %>
-
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-    <div id="top-recipes" class="carousel slide" data-ride="carousel" data-pause="hover">
+    <div id="top-recipes" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <div class="overlay"><h1>The Mindful Eater</h1></div>
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
@@ -29,7 +10,7 @@
       </ol>
      
       <!-- Wrapper for slides -->
-      <div class="carousel-inner">
+      <div class="carousel-inner" id="main-carousel" role="listbox">
         <div class="item active">
           <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
         </div>
@@ -40,40 +21,79 @@
           <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
         </div>
       </div>
-     
-      <!-- Controls -->
-      <a class="left carousel-control" href="#top-recipes" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#top-recipes" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-    </div> <!-- Carousel -->
-    <div class="brand row">
-      <h1>MINDFULLY HEALTHY</h1>
-      <h4>Where Healthy Living Meets Mindful Awareness</h4>
-    </div>
+      
+    </div> <!-- /Carousel -->
+      <nav id='nav_bar'>
+        <ul class='nav_links text-center'>
+          <li><a href="url">Breakfast</a></li>
+          <li><a href="url">Snacks</a></li>
+          <li><a href="url">Sweets</a></li>
+          <li><a href="url">M&amp;M's</a></li>
+          <li><a href="url">Philosophy</a></li>
+        </ul>
+      </nav>
     
-    <!-- jQuery -->
-    <%= javascript_include_tag "jquery.js" %>
-
-    <!-- Bootstrap Core JavaScript -->
-    <%= javascript_include_tag "bootstrap.min.js" %>
-
-    <!-- Script to Activate the Carousel -->
-    <%= javascript_include_tag "bootstrap.min.js" %>
+<% if !current_user %>
+    <%= link_to "Sign In", new_user_registration_path %>
+    <%= link_to "Log In", new_user_session_path %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<% end %>
     
-    <script type="text/JavaScript" src="https://GoChat.us/chat.js"></script>
+    <div id="body_div" class="row">
+      <div class="brand row">
+        <h1>THE MINDFUL EATER</h1>
+        <h4>Where Healthy Living Meets Mindful Awareness</h4>
+      </div>
+      <!-- Recipe Snippets -->
+      <% @recipes[0..2].each do |recipe| %>
+        <div class="recipe-snip row">
+          <div class="recipe-post col-md-8 col-md-offset-2">
+            <h3 class="text-center recipe-name"><%= recipe.name %></h3>
+            <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
+            <!-- <a class="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%#= recipe.pic.url %>"></a> -->
+            <div class="like-div text-right">
+              <%  if @likes.include? recipe.id %>
+                  <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
+                  <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
+                  <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
+              <% else %>
+                  <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
+                  <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
+              <% end %>
+
+              <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true  %>
+            </div>
+
+
+
+            <p class="recipe-description"><%= recipe.description %></p>
+            <!-- <hr> -->
+            <div class="read-more text-center">
+              <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if current_user  %>
+      <div class="add-new-btn text-center">
+        <%= link_to "Hey Miss! What'd You Cook Today?", new_recipe_path, class: "btn add-recipe", role: "button"%>
+      </div>
+      <% end %>
+      </div>
+      <% if current_user %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+      <% end %>
+      <footer>
+        <h1>melissa wimberly © copyright 2016</h1>
+      </footer>
+    
+    
     <script>
-        $('.carousel').carousel({
-            interval: 5000
-        })
+    $(function(){
+      $('.carousel').carousel({ interval: true });
+      console.log('hi');
+    });
     </script>
     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
 
