@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get "like" => "recipes#like"
   get "unlike" => "recipes#unlike"
+
+  get "likes" => "recipes#likesindex"
 end

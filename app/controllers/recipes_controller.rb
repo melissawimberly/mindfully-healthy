@@ -55,6 +55,10 @@ class RecipesController < ApplicationController
 		end
 	end
 
+	def likesindex
+		@recipes = current_user.recipes
+	end
+
 	def about
 		redirect_to :about
 	end

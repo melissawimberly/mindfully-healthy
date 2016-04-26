@@ -1,6 +1,6 @@
 
 
-    <div id="top-recipes" class="carousel slide" data-ride="carousel">
+    <div id="top-recipes" class="carousel slide" data-ride="carousel" data-interval="3000">
       <div class="overlay"><h1>The Mindful Eater</h1></div>
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -10,7 +10,7 @@
       </ol>
      
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" id="main-carousel"  role="listbox">
+      <div class="carousel-inner" id="main-carousel" role="listbox">
         <div class="item active">
           <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
         </div>
@@ -90,7 +90,10 @@
     
     
     <script>
-        $('.carousel').carousel({ interval: 3000 });
+    $(function(){
+      $('.carousel').carousel({ interval: true });
+      console.log('hi');
+    });
     </script>
     
 
