@@ -72,11 +72,16 @@ class RecipesController < ApplicationController
 	def snacksindex
 		@recipes = Recipe.all
 		@snackrecipes = []
-
-		snacks = Recipe.where(type: 'snacks')
+		snacks = Recipe.where(:type => "snacks")
+		# snacks = Recipe.where(type: 'snacks')
 		snacks.each do  |single_snack|
 			@snackrecipes << single_snack.name 
 		end
+		# @recipes.each do |recipe|
+		# 	if recipe.type = 'snacks'
+		# 		@snackrecipes << recipe
+		# 	end
+		# end
 	end
 
 	def sweetsindex
