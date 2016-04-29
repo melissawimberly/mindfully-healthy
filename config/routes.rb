@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   get "unlike" => "recipes#unlike"
 
   get "likes" => "recipes#likesindex"
+  get "breakfast" => "recipes#breakfastindex"
+  get "snacks" => "recipes#snacksindex"
+  get "sweets" => "recipes#sweetsindex"
+  get "mms" => "recipes#mmsindex"
+  get "philosophy" => "welcome#philosophy"
 end
