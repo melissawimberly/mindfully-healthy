@@ -3,4 +3,7 @@ class WelcomeController < ApplicationController
     @user = User.new
     render :layout => false
   end
+  def philosophy
+  	redirect_to action: "philosophy"
+  end
 end
