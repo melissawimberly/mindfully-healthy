@@ -10,6 +10,11 @@
 			<%= f.label :recipe %><br>
 			<%= f.text_area :recipe, cols: "60", rows: "8" %>
 		</p>
+		
+		<p>
+			<%= f.label :type %><br>
+			<%= f.text_field :type %>
+		</p>		
 
 		<p>
 			<%= f.label :description %><br>
@@ -18,7 +23,7 @@
 
 		<p>
 			<%= f.label :show_us_that_foodstagram %><br>
-			  <%= f.file_field :pic, class: "text-center" %>
+			  <%= f.file_field :pic, class: "text-center img-btn" %>
 		</p>
 
 		<p>

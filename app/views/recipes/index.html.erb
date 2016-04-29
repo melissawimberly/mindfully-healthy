@@ -21,24 +21,24 @@
           <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
         </div>
       </div>
-      
     </div> <!-- /Carousel -->
       <nav id='nav_bar'>
         <ul class='nav_links text-center'>
-          <li><a href="url">Breakfast</a></li>
-          <li><a href="url">Snacks</a></li>
-          <li><a href="url">Sweets</a></li>
-          <li><a href="url">M&amp;M's</a></li>
-          <li><a href="url">Philosophy</a></li>
+          <li><%= link_to "Breakfast", breakfast_path(@recipes) %></li>
+          <li><%= link_to "Snacks", snacks_path(@recipes) %></li>
+          <li><%= link_to "Sweets", sweets_path(@recipes) %></li>
+          <li><%= link_to "M&M's", mms_path(@recipes) %></li>
+          <li><%= link_to "Philosophy", philosophy_path(@recipes) %></li>
+          
         </ul>
       </nav>
     
-<% if !current_user %>
-    <%= link_to "Sign In", new_user_registration_path %>
-    <%= link_to "Log In", new_user_session_path %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-<% end %>
+      <% if !current_user %>
+          <%= link_to "Sign In", new_user_registration_path %>
+          <%= link_to "Log In", new_user_session_path %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+      <% end %>
     
     <div id="body_div" class="row">
       <div class="brand row">
