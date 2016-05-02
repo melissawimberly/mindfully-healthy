@@ -102,7 +102,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     mysql2 (0.4.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -113,14 +113,11 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-<<<<<<< HEAD
     pg (0.18.4)
-=======
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
->>>>>>> c57428fa4e425f6c6cf6be33b0e77203d3efdb8a
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -212,11 +209,8 @@ DEPENDENCIES
   less-rails
   mysql2 (>= 0.3.13, < 0.5)
   paperclip (~> 4.3)
-<<<<<<< HEAD
   pg
-=======
   pry
->>>>>>> c57428fa4e425f6c6cf6be33b0e77203d3efdb8a
   rails (= 4.2.6)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
