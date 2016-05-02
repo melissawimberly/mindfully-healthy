@@ -1,15 +1,18 @@
-<div class="show_recipe row">
-	<h1 class="text-center"><%= @recipe.name %></h1>
-</div>
+<div id="show_page">
 
-<div class="row recipe-post-row">
-	<div class="recipe-post col-md-8 col-md-offset-2">
-		<img class="img-responsive" src="<%= @recipe.pic.url %>">
-		<div class="recipe_recipe col-md-12"><%=simple_format(@recipe.recipe).html_safe %></div>	
-		<div class="recipe_description col-md-12"><%=simple_format(@recipe.description).html_safe %></div>
+	<div class="show_recipe row">
+		<h1 class="text-center recipe_title_show"><%= @recipe.name %></h1>
 	</div>
-</div>
 
-<div class="back-btn text-right clear">
-	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
+	<div class="row recipe-post-row">
+		<div class="recipe-post col-md-8 col-md-offset-2">
+			<img class="img-responsive show_img" src="<%= @recipe.pic.url %>">
+			<div class="recipe_recipe col-md-12"><%=simple_format(@recipe.recipe).html_safe %></div>	
+			<div class="recipe_description col-md-12"><%=simple_format(@recipe.description).html_safe %></div>
+		</div>
+	</div>
+
+	<div class="back-btn text-right clear">
+		<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
+	</div>
 </div>
