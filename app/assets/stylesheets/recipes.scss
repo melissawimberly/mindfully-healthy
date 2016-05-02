@@ -1,13 +1,10 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 #main-carousel{
 	.carousel-inner > .item > img{
 		position:relative;
-	    max-width: 100%;
-	    height: 300px;
+		max-width: 100%;
+		height: 300px;
 	}
-	 .carousel .item{
+	.carousel .item{
 		overflow:hidden;
 		height:auto;
 	}
@@ -16,4 +13,209 @@
 		width: 100%;
 		overflow: hidden;
 	}
+}
+.recipe-form{
+	.img-btn{
+		margin-left: 40%;
+	}
+}
+.showLike{
+	display:none;
+}
+.recipe_recipe{
+	margin-top: 10%;
+	text-align: center;
+	p:nth-child(1){
+		font-size: 20px;
+		font-style: italic;
+
+	}
+	p:nth-child(2), p:nth-child(4){
+		font-size: 25px;
+		padding-right: 5%;
+		color: #337ab7;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	p:nth-child(3), p:nth-child(5){
+		margin-bottom: 5%;
+		font-size: 16px;	
+	}
+	p:nth-child(4){
+		margin-top: 10%; 
+		
+	}
+	p:nth-child(5){
+		text-align: left;
+		margin-left: 20%;
+	}
+	p:nth-child(6){
+		text-align: right;
+	}
+
+}
+.recipe_title_show{
+	color: #337ab7;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#show_page{
+	.show_img{
+		width: 50%;
+		height: 50%;
+		margin: 0 auto;
+		image-orientation: from-image;
+	}
+}
+#breakfast_index_page{
+	#breakfast_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#snack_index_page{
+	#snack_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;			
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#sweets_index_page{
+	#sweets_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;		
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#mms_index_page{
+	#mms_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;		
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#likes_index_page{
+	#likes_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;		
+		.subtitle{
+			// font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+
+.grid {
+	margin: 0 auto;
+}
+
+/* clearfix */
+.grid:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+	width: 380px;
+	height: 320px;
+	float: left;
+  border-radius: 5px;
+}
+#jump_link_bottom{
+	position: fixed;
+	right: 3%;
+	bottom: 1%;
+	font-size:20px;
+	border: 2px solid #337ab7;
+}
+#jump_link_top{
+	position: fixed;
+	left: 3%;
+	bottom: 1%;
+	font-size:20px;
+	border: 2px solid #337ab7;
+}
+.logout-btn_index{
+	right: 0;
+	position: absolute;
+	bottom: 0;
+}
+#content{
+	position: relative;
+}
+.auth-btn{
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+#signup-form{
+	.welcome-signup{
+		.welome_title{
+			font-size: 40px;
+			font-weight: bold;
+		}
+		.welome_subtitle{
+			font-size: 30px;
+		}
+	}
+	.signup-content{
+		margin: 0 auto;
+		form{
+			text-align:center;
+		}
+		input{
+			text-align: center;
+			font-size: 20px;
+			width: 80%;
+			padding-top:1%;
+			padding-bottom:1%;
+		}
+	}
+	
 }
