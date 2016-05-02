@@ -1,5 +1,3 @@
-
-
 <div id="top-recipes" class="carousel slide" data-ride="carousel" data-interval="3000">
   <div id="top_page" class="overlay"><h1>The Mindful Eater</h1></div>
   <!-- Indicators -->
@@ -72,7 +70,6 @@
 
 
       <p class="recipe-description"><%= recipe.description %></p>
-      <!-- <hr> -->
       <div class="read-more text-center">
         <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
       </div>
@@ -97,7 +94,6 @@
 <script>
   $(function(){
     $('.carousel').carousel({ interval: true });
-    console.log('hi');
   });
 </script>
 
