@@ -87,7 +87,8 @@
       <% end %>
       </div>
       <% if current_user %>
-        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        <button type="button" class="btn btn-secondary-outline logout-btn_index"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
+
       <% end %>
       <footer>
         <h1 id="bottom_footer">melissa wimberly © copyright 2016</h1>

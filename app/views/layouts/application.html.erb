@@ -25,13 +25,14 @@
 </head>
 <body id="main">
 
-  <div class="content">
+  <div id="content">
     <%= yield %>
   </div>
 
   <div class="logout">
     <% if current_user %>
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    <button type="button" class="btn btn-secondary-outline logout-btn"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
+      
     <% end %>
   </div>
   
