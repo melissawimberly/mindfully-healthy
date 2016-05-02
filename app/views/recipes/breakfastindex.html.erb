@@ -1,14 +1,32 @@
-  <h1>Breakfast</h1>   
-      <% @breakfastrecipes.each do |recipe| %>
-        <div class="recipe-snip row">
-          <div class="recipe-post col-md-8 col-md-offset-2">
-            <h3 class="text-center recipe-name"><%= recipe.name %></h3>
-          </div>
-        </div>
+  <div id="breakfast_index_page">
+  	
 
-            
-      <% end %>
+  	<div id="breakfast_header">
+  		<!-- <h1 class="title text-center">Breakfast</h1>  -->
+  		<h2 class="subtitle text-center">“Having her favorite breakfast always made her feel cozy, like a warm blanket was being wrapped around her.”</h2>  
+  	</div>
+  	<div id="breakfast_content">
+  	  <div class="grid">
+  		<% @breakfastrecipes.each do |recipe| %>
+	    	<div class="grid-item">
+  				<%=image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "img-responsive grid_img") %>
+  				
+  				<div class="read-more text-center">
+  					<%= link_to recipe do %>
+					  <%= content_tag :span, recipe.name %>
+					<% end %>
+  				</div>
+	    	</div>
+  		
+  		<% end %>
+	  </div>
+  	</div><!-- /breakfast content -->
 
-<div class="back-btn text-right clear">
-	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
-</div>      
+
+  	<div class="back-btn text-right clear">
+  		<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
+  	</div>      
+
+
+
+</div><!-- /breakfast index page -->

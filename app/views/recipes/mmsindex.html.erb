@@ -1,15 +1,27 @@
-M&amp;M's
+  <div id="mms_index_page">
+  
+  	<div id="mms_header">
+  		<h2 class="subtitle text-center"> “What is an M&M you ask?? Why it's simply a Missy Medley (aka a medley of anything I can find in my fridge)” </h2>  
+  	</div>
+  	<div id="mms_content">
+  		<div class="grid">
+  			<% @mmrecipes.each do |recipe| %>
+  			<div class="grid-item">
+  				<%=image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "img-responsive grid_img") %>
+  				
+  				<div class="read-more text-center">
+  					<%= link_to recipe do %>
+  					<%= content_tag :span, recipe.name %>
+  					<% end %>
+  				</div>
+  			</div>
 
-<% @mmrecipes.each do |recipe| %>
-    <div class="recipe-snip row">
-      <div class="recipe-post col-md-8 col-md-offset-2">
-        <h3 class="text-center recipe-name"><%= recipe.name %></h3>
-      </div>
-    </div>
+  			<% end %>
+  		</div>
+  	</div><!-- /sweets content -->
 
-        
-<% end %>
+  </div><!-- /sweets index page -->
+  <div class="back-btn text-right clear">
+  	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
+  </div>      
 
-<div class="back-btn text-right clear">
-	<%= link_to "Back To Recipes", root_path, class: "btn btn-info description", role: "button"%>
-</div>
