@@ -21,4 +21,149 @@
 	.img-btn{
 		margin-left: 40%;
 	}
-}	
+}
+.showLike{
+	display:none;
+}
+.recipe_recipe{
+	margin-top: 10%;
+	// border: 2px solid #337ab7;
+	text-align: center;
+	p:nth-child(1), p:nth-child(3){
+		// border: 5px solid #337ab7;
+		font-size: 25px;
+		// padding-left: 5%;
+		padding-right: 5%;
+		color: #337ab7;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	p:nth-child(2), p:nth-child(4){
+		// text-align: left;
+		// margin-left: 5%;
+		margin-bottom: 5%;
+		font-size: 16px;	
+	}
+	p:nth-child(3){
+		margin-top: 10%; 
+		
+	}
+	p:nth-child(4){
+		text-align: left;
+		margin-left: 5%;
+	}
+	p:nth-child(5){
+		text-align: right;
+	}
+
+}
+.recipe_title_show{
+	color: #337ab7;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#show_page{
+	// background-color: #F0F0F0;
+	.show_img{
+		width: 50%;
+	    height: 50%;
+	    margin: 0 auto;
+    	image-orientation: from-image;
+	}
+}
+#breakfast_index_page{
+	#breakfast_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#snack_index_page{
+	#snack_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;			
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#sweets_index_page{
+	#sweets_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;		
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+#mms_index_page{
+	#mms_header{
+		background-color: aliceblue;
+		margin-bottom:5%;
+		padding-left:4%;
+		padding-right:4%;		
+		.subtitle{
+			font-style: italic;
+			color: #337ab7;
+			font-family: fantasy;
+			padding-top: 15px;
+
+		}
+	}
+	margin-bottom:10%;
+}
+
+ .grid {
+  /* center */
+  margin: 0 auto;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 380px;
+  height: 320px;
+  float: left;
+  // background: #D26;
+  // border: 2px solid #333;
+  // border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+#jump_link{
+	position: fixed;
+	right: 3%;
+	bottom: 1%;
+	font-size:20px;
+	border: 2px solid #337ab7;
+}
