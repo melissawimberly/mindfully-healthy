@@ -15,8 +15,8 @@
 
   <!-- Content on top of the slider -->
       <div class="welcome-signup text-center">
-        <h2>Welcome To The Mindful Eater</h2>
-        <h3>Let's Get You an Account So You Can Start Cooking!</h3>
+        <h2 class="welome_title">Welcome To The Mindful Eater</h2>
+        <h3 class="welome_subtitle">Let's Get You an Account So You Can Start Cooking!</h3>
       </div> 
 
     <div class="signup-content">
@@ -25,12 +25,12 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email %><br />
+          <%#= f.label :email %><br />
           <%= f.email_field(:email, autofocus: true, placeholder: 'What\'s Your Email Address?') %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
+          <%#= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
@@ -38,7 +38,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
+          <%#= f.label :password_confirmation %><br />
           <%= f.password_field(:password_confirmation, autocomplete: "off", placeholder:'Retype Your Password, just to be sure')  %>
         </div>
 
