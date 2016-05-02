@@ -56,7 +56,8 @@ class RecipesController < ApplicationController
 	end
 
 	def likesindex
-		@recipes = current_user.recipes
+		@recipes = current_user.recipes.uniq
+
 	end
 
 	def breakfastindex
