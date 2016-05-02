@@ -1,5 +1,5 @@
 <div class="recipe-form text-center">
-	<h1>What Did You Cook Today???</h1>
+	<h1>What Did You Cook Today??? Missy</h1>
 	<%= form_for :recipe, url: recipes_path do |f| %>
 		<p>
 			<%= f.label :what_do_you_call_it_this_creation %><br>
@@ -8,17 +8,22 @@
 
 		<p>
 			<%= f.label :recipe %><br>
-			<%= f.text_area :recipe %>
+			<%= f.text_area :recipe, cols: "60", rows: "8" %>
 		</p>
+		
+		<p>
+			<%= f.label :kind %><br>
+			<%= f.text_field :kind %>
+		</p>		
 
 		<p>
 			<%= f.label :description %><br>
-			<%= f.text_area :description %>
+			<%= f.text_area :description, cols: "60", rows: "8" %>
 		</p>
 
 		<p>
 			<%= f.label :show_us_that_foodstagram %><br>
-			  <%= f.file_field :pic, class: "text-center" %>
+			  <%= f.file_field :pic, class: "text-center img-btn" %>
 		</p>
 
 		<p>
@@ -27,4 +32,7 @@
 	<% end %>
 </div>
 
-
+<script type="text/javascript">
+	var text = document.forms[0].txt.value;
+		text = text.replace(/\r\n?|\n/g, '<br />');
+</script>

@@ -1,4 +1,6 @@
-<h1>What Did You Cook Today???</h1>
+
+
+<h1>What Did You Cook Today??? ya bish</h1>
 <%= form_for :recipe, url: recipes_path do |f| %>
 	<p>
 		<%= f.label :what_do_you_call_it_this_creation %><br>
@@ -11,8 +13,8 @@
 	</p>
 	
 	<p>
-		<%= f.label :date %><br>
-		<%= f.text_field :date %>
+		<%= f.label :type %><br>
+		<%= f.text_field :type %>
 	</p>
 
 	<p>
@@ -22,7 +24,7 @@
 
 	<p>
 		<%= f.label :show_us_that_foodstagram %><br>
-		  <%= f.file_field :pic %>
+		 <%= f.file_field :pic %>
 	</p>
 
 		
@@ -30,5 +32,4 @@
 		<%= f.submit %>
 	</p>
 <% end %>
-
 

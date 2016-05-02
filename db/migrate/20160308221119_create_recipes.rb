@@ -6,6 +6,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.datetime :date
       t.text :description
       t.string :urlTitle
+      t.string :kind
 
       t.timestamps null: false
     end
