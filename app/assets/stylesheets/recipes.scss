@@ -4,10 +4,10 @@
 #main-carousel{
 	.carousel-inner > .item > img{
 		position:relative;
-	    max-width: 100%;
-	    height: 300px;
+		max-width: 100%;
+		height: 300px;
 	}
-	 .carousel .item{
+	.carousel .item{
 		overflow:hidden;
 		height:auto;
 	}
@@ -67,9 +67,9 @@
 	// background-color: #F0F0F0;
 	.show_img{
 		width: 50%;
-	    height: 50%;
-	    margin: 0 auto;
-    	image-orientation: from-image;
+		height: 50%;
+		margin: 0 auto;
+		image-orientation: from-image;
 	}
 }
 #breakfast_index_page{
@@ -153,40 +153,47 @@
 	margin-bottom:10%;
 }
 
- .grid {
-  /* center */
-  margin: 0 auto;
+.grid {
+	/* center */
+	margin: 0 auto;
 }
 
 /* clearfix */
 .grid:after {
-  content: '';
-  display: block;
-  clear: both;
+	content: '';
+	display: block;
+	clear: both;
 }
 
 /* ---- grid-item ---- */
 
 .grid-item {
-  width: 380px;
-  height: 320px;
-  float: left;
+	width: 380px;
+	height: 320px;
+	float: left;
   // background: #D26;
   // border: 2px solid #333;
   // border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
 }
-#jump_link{
+#jump_link_bottom{
 	position: fixed;
 	right: 3%;
 	bottom: 1%;
 	font-size:20px;
 	border: 2px solid #337ab7;
 }
+#jump_link_top{
+	position: fixed;
+	left: 3%;
+	bottom: 1%;
+	font-size:20px;
+	border: 2px solid #337ab7;
+}
 .logout-btn_index{
-    right: 0;
-    position: absolute;
-    bottom: 0;
+	right: 0;
+	position: absolute;
+	bottom: 0;
 }
 #content{
 	position: relative;

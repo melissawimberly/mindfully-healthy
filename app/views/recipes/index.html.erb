@@ -1,105 +1,104 @@
 
 
-    <div id="top-recipes" class="carousel slide" data-ride="carousel" data-interval="3000">
-      <div class="overlay"><h1>The Mindful Eater</h1></div>
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
-        <li data-target="#top-recipes" data-slide-to="1"></li>
-        <li data-target="#top-recipes" data-slide-to="2"></li>
-      </ol>
-     
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" id="main-carousel" role="listbox">
-        <div class="item active">
-          <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
-        </div>
-        <div class="item">
-          <%= image_tag("good-bread.JPG", :alt => "Life Changing Bread", class: "img-responsive") %>
-        </div>
-        <div class="item">
-          <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
-        </div>
-      </div>
-    </div> <!-- /Carousel -->
-      <nav id='nav_bar'>
-        <ul class='nav_links text-center'>
-          <li><%= link_to "Breakfast", breakfast_path(@recipes) %></li>
-          <li><%= link_to "Snacks", snacks_path(@recipes) %></li>
-          <li><%= link_to "Sweets", sweets_path(@recipes) %></li>
-          <li><%= link_to "M&M's", mms_path(@recipes) %></li>
-          <li><%= link_to "Faves", likes_path(@recipeslist) %></li>
-          
-        </ul>
-      </nav>
-    
-      <% if !current_user %>
-          <%= link_to "Sign In", new_user_registration_path %>
-          <%= link_to "Log In", new_user_session_path %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-      <% end %>
-    
-    <div id="body_div" class="row">
-      <div class="brand row">
-        <h1>THE MINDFUL EATER</h1>
-        <h4>Where Healthy Living Meets Mindful Awareness</h4>
-      </div>
-      <div id="jump_link">
-        <a href="#bottom_footer"><span class='glyphicon glyphicon-menu-down'></span></a>
-        <%#= link_to "<span class='glyphicon glyphicon-menu-down'></span>".html_safe, #bottom_footer %>
-      </div>
-      <!-- Recipe Snippets -->
-      <% @recipes.each do |recipe| %>
-        <div class="recipe-snip row">
-          <div class="recipe-post col-md-8 col-md-offset-2">
-            <h3 class="text-center recipe-name"><%= recipe.name %></h3>
-            <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
-              <div class="showLike">hey</div>
-            <!-- <a class="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%#= recipe.pic.url %>"></a> -->
-            <div class="like-div text-right">
-              <%  if @likes.include? recipe.id %>
-                  <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true, class: "liker hide-like heart"  %>
-                  <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
-                  <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
-              <% else %>
-                  <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
-                  <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
-              <% end %>
+<div id="top-recipes" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <div id="top_page" class="overlay"><h1>The Mindful Eater</h1></div>
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
+    <li data-target="#top-recipes" data-slide-to="1"></li>
+    <li data-target="#top-recipes" data-slide-to="2"></li>
+  </ol>
 
-              <%#= link_to "Like", like_path(rec_id: recipe.id), remote: true  %>
-            </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" id="main-carousel" role="listbox">
+    <div class="item active">
+      <%= image_tag("banana-pancake.JPG", :alt => "Banana Pancakes", class: "img-responsive") %>
+    </div>
+    <div class="item">
+      <%= image_tag("good-bread.JPG", :alt => "Life Changing Bread", class: "img-responsive") %>
+    </div>
+    <div class="item">
+      <%= image_tag("quinoa-bowl.JPG", :alt => "Quinoa Bowl", class: "img-responsive") %>
+    </div>
+  </div>
+</div> <!-- /Carousel -->
+<nav id='nav_bar'>
+  <ul class='nav_links text-center'>
+    <li><%= link_to "Breakfast", breakfast_path(@recipes) %></li>
+    <li><%= link_to "Snacks", snacks_path(@recipes) %></li>
+    <li><%= link_to "Sweets", sweets_path(@recipes) %></li>
+    <li><%= link_to "M&M's", mms_path(@recipes) %></li>
+    <li><%= link_to "Faves", likes_path(@recipeslist) %></li>
 
+  </ul>
+</nav>
+
+<% if !current_user %>
+<%= link_to "Sign In", new_user_registration_path %>
+<%= link_to "Log In", new_user_session_path %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% end %>
+
+<div id="body_div" class="row">
+  <div class="brand row">
+    <h1>THE MINDFUL EATER</h1>
+    <h4>Where Healthy Living Meets Mindful Awareness</h4>
+  </div>
+  <div id="jump_link_bottom">
+    <a href="#bottom_footer"><span class='glyphicon glyphicon-menu-down'></span></a>
+  </div>
+  <div id="jump_link_top">
+    <a href="#top_page"><span class='glyphicon glyphicon-menu-up'></span></a>
+  </div>
+  <!-- Recipe Snippets -->
+  <% @recipes.each do |recipe| %>
+  <div class="recipe-snip row">
+    <div class="recipe-post col-md-8 col-md-offset-2">
+      <h3 class="text-center recipe-name"><%= recipe.name %></h3>
+      <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
+      <div class="showLike">hey</div>
+      <div class="like-div text-right">
+        <%  if @likes.include? recipe.id %>
+        <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
+        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
+        <% else %>
+        <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
+        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
+        <% end %>
+
+      </div>
 
 
-            <p class="recipe-description"><%= recipe.description %></p>
-            <!-- <hr> -->
-            <div class="read-more text-center">
-              <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <% if current_user  %>
-      <div class="add-new-btn text-center">
-        <%= link_to "Hey Miss! What'd You Cook Today?", new_recipe_path, class: "btn add-recipe", role: "button"%>
-      </div>
-      <% end %>
-      </div>
-      <% if current_user %>
-        <button type="button" class="btn btn-secondary-outline logout-btn_index"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
 
-      <% end %>
-      <footer>
-        <h1 id="bottom_footer">melissa wimberly © copyright 2016</h1>
-      </footer>
-    
-    
-    <script>
-    $(function(){
-      $('.carousel').carousel({ interval: true });
-      console.log('hi');
-    });
-    </script>
-    
+      <p class="recipe-description"><%= recipe.description %></p>
+      <!-- <hr> -->
+      <div class="read-more text-center">
+        <%= link_to "Full Recipe", recipe, id: "description-trunctd", class: "description" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% if current_user  %>
+  <div class="add-new-btn text-center">
+    <%= link_to "Hey Miss! What'd You Cook Today?", new_recipe_path, class: "btn add-recipe", role: "button"%>
+  </div>
+  <% end %>
+</div>
+<% if current_user %>
+<button type="button" class="btn btn-secondary-outline logout-btn_index"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
+
+<% end %>
+<footer>
+  <h1 id="bottom_footer">melissa wimberly © copyright 2016</h1>
+</footer>
+
+
+<script>
+  $(function(){
+    $('.carousel').carousel({ interval: true });
+    console.log('hi');
+  });
+</script>
+
 
