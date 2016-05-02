@@ -55,7 +55,6 @@
     <div class="recipe-post col-md-8 col-md-offset-2">
       <h3 class="text-center recipe-name"><%= recipe.name %></h3>
       <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
-      <div class="showLike">hey</div>
       <div class="like-div text-right">
         <%  if @likes.include? recipe.id %>
         <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
@@ -64,7 +63,6 @@
         <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
         <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
         <% end %>
-
       </div>
 
 
@@ -86,6 +84,7 @@
 <button type="button" class="btn btn-secondary-outline logout-btn_index"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
 
 <% end %>
+
 <footer>
   <h1 id="bottom_footer">melissa wimberly © copyright 2016</h1>
 </footer>
