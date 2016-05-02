@@ -204,21 +204,26 @@ footer h1{
     }
 }
 #login-form .item:nth-child(1) {
-    background: url("banana-pancake.JPG") no-repeat center center fixed;
+    /*background: asseturl("banana-pancake.JPG") no-repeat center center fixed;*/
+    background-image:url('<%= asset_path("banana-pancake.JPG") %> ') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 #login-form .item:nth-child(2) {
-    background: url("good-bread.JPG") no-repeat center center fixed;
+    /*background: url("good-bread.JPG") no-repeat center center fixed;*/
+    background-image:url('<%= asset_path("good-bread.JPG") %> ') no-repeat center center fixed;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 #login-form .item:nth-child(3) {
-    background: url("quinoa-bowl.png") no-repeat center center fixed;
+    /*background: url("quinoa-bowl.png") no-repeat center center fixed;*/
+    background-image:url('<%= asset_path("quinoa-bowl.png") %> ') no-repeat center center fixed;
+    
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
