@@ -45,12 +45,17 @@
         <h1>THE MINDFUL EATER</h1>
         <h4>Where Healthy Living Meets Mindful Awareness</h4>
       </div>
+      <div id="jump_link">
+        <a href="#bottom_footer"><span class='glyphicon glyphicon-menu-down'></span></a>
+        <%#= link_to "<span class='glyphicon glyphicon-menu-down'></span>".html_safe, #bottom_footer %>
+      </div>
       <!-- Recipe Snippets -->
-      <% @recipes[0..2].each do |recipe| %>
+      <% @recipes.each do |recipe| %>
         <div class="recipe-snip row">
           <div class="recipe-post col-md-8 col-md-offset-2">
             <h3 class="text-center recipe-name"><%= recipe.name %></h3>
             <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
+              <div class="showLike">hey</div>
             <!-- <a class="recipe-img" href="#"><img class="img-responsive recipe-img-lg" src="<%#= recipe.pic.url %>"></a> -->
             <div class="like-div text-right">
               <%  if @likes.include? recipe.id %>
@@ -85,7 +90,7 @@
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
       <% end %>
       <footer>
-        <h1>melissa wimberly © copyright 2016</h1>
+        <h1 id="bottom_footer">melissa wimberly © copyright 2016</h1>
       </footer>
     
     
