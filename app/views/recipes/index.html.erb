@@ -1,5 +1,5 @@
 <div id="top-recipes" class="carousel slide" data-ride="carousel" data-interval="3000">
-  <div id="top_page" class="overlay"><h1>The Mindful Eater</h1></div>
+  <div id="top_page" class="overlay"><h1 id="main_title">The Mindful Eater</h1></div>
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#top-recipes" data-slide-to="0" class="active"></li>
@@ -29,6 +29,20 @@
     <li><%= link_to "Faves", likes_path(@recipeslist) %></li>
   </ul>
 </nav>
+<nav class="navbar navbar-light bg-faded visible-xs text-center" id="mobile_nav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+    &#9776;
+  </button>
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav">
+      <li class="nav-item"><%= link_to "Breakfast", breakfast_path(@recipes), class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Snacks", snacks_path(@recipes), class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Sweets", sweets_path(@recipes), class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "M&M's", mms_path(@recipes), class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Faves", likes_path(@recipeslist), class: "nav-link" %></li>
+    </ul>
+  </div>
+</nav>
 
 
 <% if !current_user %>
@@ -40,8 +54,8 @@
 
 <div id="body_div" class="row">
   <div class="brand row">
-    <h1>THE MINDFUL EATER</h1>
-    <h4>Where Healthy Living Meets Mindful Awareness</h4>
+    <h1 class="col-xs-12">THE MINDFUL EATER</h1>
+    <h4 class="col-xs-12">Where Healthy Living Meets Mindful Awareness</h4>
   </div>
   <div id="jump_link_bottom">
     <a href="#bottom_footer"><span class='glyphicon glyphicon-menu-down'></span></a>
@@ -58,10 +72,10 @@
       <div class="like-div text-right">
         <%  if @likes.include? recipe.id %>
         <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
-        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker' %>
+        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker unlike_text' %>
         <% else %>
         <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
-        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker"  %>
+        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker unlike_text"  %>
         <% end %>
       </div>
 
