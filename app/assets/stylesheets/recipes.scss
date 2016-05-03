@@ -221,10 +221,11 @@
 }
 
 @media (max-width: 768px) {
- 	#top_page{
- 		#main_title{
- 			font-size: 25px;
- 		}
+ 	.brand{
+ 		margin-top: 0;
+ 	}
+ 	#top_page #main_title, .carousel-indicators{
+ 			display: none;
  	}
  	#mobile_nav{
  		margin-bottom: 0px;
@@ -236,10 +237,21 @@
  	#show_page{
  		.recipe-post-row{
  			.recipe-post{
+			 	.recipe_recipe p:nth-child(1){
+			 		font-size: 15px;
+			 		margin-left: 8%;
+			 		margin-right: 8%;
+			 	}
 			 	.recipe_recipe p:nth-child(5){
 			 		margin-left: 5%;
+			 		margin-right: 5%;
 			 	}
- 			}
+			 	.recipe_recipe p:nth-child(6) {
+				    text-align: center;
+				    font-style: italic;
+				    margin-right: 5%;
+				}
+			}
  		}
  	}
  	#breakfast_index_page, #snack_index_page, #sweets_index_page, #mms_index_page{
