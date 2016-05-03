@@ -219,8 +219,34 @@
 	}
 	
 }
+#admin-add-new{
+	display: none;
+}
 
 @media (max-width: 768px) {
+ 	#login-form{
+ 		.welcome-signup{
+ 			margin-top: 10%;
+ 			.welcome-text{
+ 				font-size: 40px;
+			    color: #337ab7;
+			    font-weight: 100;
+			    border: 2px solid;
+ 			}
+ 		}
+ 		.signup-content{
+ 			.auth-btn-row{
+ 				position: fixed;
+    			bottom: 10%;
+    			// margin: 0 auto;
+    			.auth-btn{
+    				padding-left: 30%;
+    				margin: 5%;
+    				padding-right: 30%;
+    			}
+ 			}
+ 		}
+ 	}
  	.brand{
  		margin-top: 0;
  	}
