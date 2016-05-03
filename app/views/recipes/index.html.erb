@@ -64,7 +64,7 @@
     <a href="#top_page"><span class='glyphicon glyphicon-menu-up'></span></a>
   </div>
   <!-- Recipe Snippets -->
-  <% @recipes.each do |recipe| %>
+  <% @recipes[2..-1].each do |recipe| %>
   <div class="recipe-snip row">
     <div class="recipe-post col-md-8 col-md-offset-2">
       <h3 class="text-center recipe-name"><%= recipe.name %></h3>
