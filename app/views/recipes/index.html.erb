@@ -20,16 +20,16 @@
     </div>
   </div>
 </div> <!-- /Carousel -->
-<nav id='nav_bar'>
+<nav id='nav_bar' class="hidden-xs">
   <ul class='nav_links text-center'>
     <li><%= link_to "Breakfast", breakfast_path(@recipes) %></li>
     <li><%= link_to "Snacks", snacks_path(@recipes) %></li>
     <li><%= link_to "Sweets", sweets_path(@recipes) %></li>
     <li><%= link_to "M&M's", mms_path(@recipes) %></li>
     <li><%= link_to "Faves", likes_path(@recipeslist) %></li>
-
   </ul>
 </nav>
+
 
 <% if !current_user %>
 <%= link_to "Sign In", new_user_registration_path %>
