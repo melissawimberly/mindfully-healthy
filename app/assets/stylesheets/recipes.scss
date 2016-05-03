@@ -47,7 +47,7 @@
 	}
 	p:nth-child(5){
 		text-align: left;
-		margin-left: 20%;
+		margin-left: 10%;
 	}
 	p:nth-child(6){
 		text-align: right;
@@ -218,4 +218,51 @@
 		}
 	}
 	
+}
+
+@media (max-width: 768px) {
+ 	#top_page{
+ 		#main_title{
+ 			font-size: 25px;
+ 		}
+ 	}
+ 	#mobile_nav{
+ 		margin-bottom: 0px;
+    	padding-top: 15px;
+ 	}
+ 	.unlike_text{
+ 		margin-right: 20px;
+ 	} 
+ 	#show_page{
+ 		.recipe-post-row{
+ 			.recipe-post{
+			 	.recipe_recipe p:nth-child(5){
+			 		margin-left: 5%;
+			 	}
+ 			}
+ 		}
+ 	}
+ 	#breakfast_index_page, #snack_index_page, #sweets_index_page, #mms_index_page{
+ 		#breakfast_header, #snack_header, #sweets_header, #mms_header{
+ 			.subtitle{
+ 				font-size: smaller;
+ 			}
+ 		}
+ 		#breakfast_content, #snack_content, #sweets_content, #mms_content{
+ 			.read-more{
+ 				a{
+ 					padding: 5px 20px;
+ 					margin-left: -10%;
+ 					top: -15px;
+ 				}
+ 			}
+ 			margin-bottom: 25%;
+ 		}
+ 		.back-btn{
+ 			position: fixed;
+ 			bottom: 0;
+ 			right: 15%;
+
+ 		}
+ 	}  
 }
