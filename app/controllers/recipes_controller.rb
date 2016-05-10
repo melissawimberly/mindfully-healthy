@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
 	
-	
 	def index
 		@recipes = Recipe.all
 		@likes = []
@@ -27,7 +26,6 @@ class RecipesController < ApplicationController
 	end
 
 	def like
-		# before_filter :authenticate_user!
 		if current_user
 			respond_to do |format|
 				format.html {}

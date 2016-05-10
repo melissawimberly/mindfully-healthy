@@ -68,14 +68,14 @@
   <div class="recipe-snip row">
     <div class="recipe-post col-md-8 col-md-offset-2">
       <h3 class="text-center recipe-name"><%= recipe.name %></h3>
-      <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id), remote: true ) %>
+      <%=link_to( image_tag(recipe.pic.url, :alt => "Save This Recipe", class: "recipe-img-lg img-responsive"), like_path(rec_id: recipe.id) ) %>
       <div class="like-div text-right">
         <%  if @likes.include? recipe.id %>
-        <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true ) %>
-        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: 'liker unlike_text' %>
+        <%=link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id) ) %>
+        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), class: 'liker unlike_text' %>
         <% else %>
-        <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id), remote: true) %>
-        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), remote: true, class: "liker unlike_text"  %>
+        <%= link_to( image_tag("heart.png", :alt => "Save This Recipe", class: "liker like-img"), like_path(rec_id: recipe.id)) %>
+        <%= link_to "Unlike", unlike_path(rec_id: recipe.id), class: "liker unlike_text"  %>
         <% end %>
       </div>
 
