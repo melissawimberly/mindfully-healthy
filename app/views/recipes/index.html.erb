@@ -44,7 +44,7 @@
   </div>
 </nav>
 
-<div class="auth-div">
+<div id="auth-div">
   <% if !current_user %>
   <%= link_to "Sign In", new_user_registration_path %>
   <%= link_to "Log In", new_user_session_path %>
