@@ -44,13 +44,14 @@
   </div>
 </nav>
 
-
-<% if !current_user %>
-<%= link_to "Sign In", new_user_registration_path %>
-<%= link_to "Log In", new_user_session_path %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<% end %>
+<div class="auth-div">
+  <% if !current_user %>
+  <%= link_to "Sign In", new_user_registration_path %>
+  <%= link_to "Log In", new_user_session_path %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% end %>
+</div>
 
 <div id="body_div" class="row">
   <div class="brand row">
