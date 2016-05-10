@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-	before_filter :authenticate_user!
+	
 	
 	def index
 		@recipes = Recipe.all
@@ -27,29 +27,38 @@ class RecipesController < ApplicationController
 	end
 
 	def like
-		respond_to do |format|
-			format.html {}
-			format.js {
-				@like = Like.create(
-					recipe_id: params[:rec_id],
-					user_id: current_user.id
-				)
-		    }
-		end
+		# before_filter :authenticate_user!
+		if current_user
+			respond_to do |format|
+				format.html {}
+				format.js {
+					@like = Like.create(
+						recipe_id: params[:rec_id],
+						user_id: current_user.id
+					)
+			    }
+			end
+		else
+			redirect_to new_user_session_path
+		end	
 
 	end
 
 	def unlike
-		respond_to do |format|
-			format.html {}
-			format.js {
-				@like = Like.where(
-					recipe_id: params[:rec_id],
-					user_id: current_user.id
-				)
-		      	@like.delete_all
-		     }
-		  end
+		if current_user
+			respond_to do |format|
+				format.html {}
+				format.js {
+					@like = Like.where(
+						recipe_id: params[:rec_id],
+						user_id: current_user.id
+					)
+			      	@like.delete_all
+			    }
+			end
+		else
+			redirect_to new_user_session_path
+		end
 	end
 
 	def likesindex
