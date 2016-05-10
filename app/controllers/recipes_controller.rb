@@ -60,7 +60,11 @@ class RecipesController < ApplicationController
 	end
 
 	def likesindex
-		@recipes = current_user.recipes.uniq
+		if current_user
+			@recipes = current_user.recipes.uniq
+		else
+			redirect_to new_user_session_path
+		end		
 
 	end
 
